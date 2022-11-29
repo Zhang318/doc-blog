@@ -4,22 +4,25 @@
 import { resolve } from 'path'
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+// @ts-ignore
 import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
-const DOMAIN_NAME = 'blogstudy.com' // 域名 (不带https)
+const DOMAIN_NAME = 'studybook.cn' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
+
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
+  // @ts-ignore
   theme: 'vdoing', // 使用npm主题包
   // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
 
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "Evan's blog",
-      description: 'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
+      title: "Study Book",
+      description: 'Java学习笔记',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
@@ -30,82 +33,136 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '前端',
-        link: '/web/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        text: 'Java',
+        link: '/java/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
-            text: '前端文章',
-            items: [
-              { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
-            ],
+            text: 'Java集合',
+            link: '/collection/'
           },
           {
-            text: '学习笔记',
-            items: [
-              { text: '《JavaScript教程》', link: '/note/javascript/' },
-              { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-              { text: '《ES6 教程》', link: '/note/es6/' },
-              { text: '《Vue》', link: '/note/vue/' },
-              { text: '《React》', link: '/note/react/' },
-              {
-                text: '《TypeScript 从零实现 axios》',
-                link: '/note/typescript-axios/',
-              },
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-              {
-                text: 'TypeScript',
-                link: '/pages/51afd6/',
-              },
-              {
-                text: 'JS设计模式总结',
-                link: '/pages/4643cd/',
-              },
-            ],
+            text: 'JUC',
+            link: '/juc/'
+          },
+          {
+            text: 'IO/NIO/AIO',
+            link: '/io/'
+          }
+        ],
+      },
+      {
+        text: '计算机基础',
+        link: '/base/',
+        items: [
+          {
+            text: '计算机基础',
+            link: '/base/'
+          },
+          {
+            text: '数据结构',
+            link: '/structure/'
+          },
+          {
+            text: '操作系统',
+            link: '/os/'
+          },
+          {
+            text: '计算机网络',
+            link: '/internet/'
           },
         ],
       },
       {
-        text: '页面',
-        link: '/ui/',
-        items: [
-          { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-          { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
-        ],
-      },
-      {
-        text: '技术',
+        text: '中间件',
         link: '/technology/',
         items: [
-          { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-          { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-          { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
-          { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
+          {
+            text: 'MQ',
+            link: '/mq/'
+          },
+          {
+            text: 'Redis',
+            link: '/redis/'
+          },
+          {
+            text: 'ElasticSearch',
+            link: '/es/'
+          }
         ],
       },
       {
-        text: '更多',
-        link: '/more/',
+        text: '数据库',
+        link: '/mysql/',
         items: [
-          { text: '学习', link: '/pages/f2a556/' },
-          { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-          { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
-          { text: '实用技巧', link: '/pages/baaa02/' },
-          { text: '友情链接', link: '/friends/' },
+          {
+            text: 'Mysql',
+            link: '/mysql/'
+          },
+          {
+            text: 'SqlServer',
+            link: '/sqlServer/'
+          }
         ],
+      },
+      {
+        text: 'Spring',
+        link: '/spring/',
+        items: [
+          {
+            text: 'Spring原理',
+            link: '/spring/'
+          },
+          {
+            text: 'SpringBoot',
+            link: '/springBoot/'
+          },
+          {
+            text: 'SpringSecurity',
+            link: '/springSecurity/'
+          },
+          {
+            text: 'SpringCloud Alibaba',
+            link: '/springCloud/'
+          }
+
+        ],
+      },
+      {
+        text: '服务部署',
+        link: '/service/',
+        items: [
+          {
+            text: 'docker',
+            link: '/docker/'
+          },
+          {
+            text: 'k8s',
+            link: '/k8s/'
+          },
+          {
+            text: 'CI/CD',
+            link: '/ci/'
+          },
+          {
+            text: 'linux',
+            link: '/linux/'
+          }
+
+        ],
+      },
+      {
+        text: '实用系列',
+        link: '/goods/'
+      },
+      {
+        text: '友情链接',
+        link: '/friends/'
       },
       { text: '关于', link: '/about/' },
       {
         text: '收藏',
-        link: '/pages/beb6c0bd8a66cea6/',
-        // items: [
-        //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
-        //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-        //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
-        // ],
+        link: '/pages/beb6c0bd8a66cea6/'
       },
       {
         text: '索引',
@@ -119,12 +176,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    repo: 'Zhang318/doc-blog', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     // docsBranch: 'master', // 编辑的文件所在分支，默认master。 注意：如果你的分支是main则修改为main
-    editLinks: true, // 启用编辑
+    editLinks: false, // 启用编辑
     editLinkText: '编辑',
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
@@ -167,7 +224,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
       name: 'studybook', // 必需
-      link: 'https://github.com/studynoteblog', // 可选的
+      link: 'https://github.com/Zhang318', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
@@ -189,28 +246,23 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: 'https://github.com/studynoteblog',
-        },
-        {
-          iconClass: 'icon-erji',
-          title: '听音乐',
-          link: 'https://music.163.com/#/playlist?id=755597173',
-        },
+          link: 'https://github.com/Zhang318',
+        }
       ],
     },
 
     // 页脚信息
     footer: {
-      createYear: 2021, // 博客创建年份
+      createYear: 2022, // 博客创建年份
       copyrightInfo:
-        'Evan Xu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        'Study Book | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'xugaoyi',
-        link: 'https://github.com/studynoteblog'
+        name: 'studybook',
+        link: 'https://github.com/Zhang318'
       }
     },
 
@@ -324,26 +376,26 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
-    [
-      'vuepress-plugin-comment', // 评论
-      {
-        choosen: 'gitalk',
-        options: {
-          clientID: '2b2e72d7a4b6f3b7d6d2',
-          clientSecret: '6630eedb2c951d796c5dc271b3223a93eb37df7b',
-          repo: 'doc-blog', // GitHub 仓库
-          owner: 'Zhang318 ', // GitHub仓库所有者
-          admin: ['Zhang318 '], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-        },
-      },
-    ],
+    // [
+    //   'vuepress-plugin-comment', // 评论
+    //   {
+    //     choosen: 'gitalk',
+    //     options: {
+    //       clientID: '2b2e72d7a4b6f3b7d6d2',
+    //       clientSecret: '6630eedb2c951d796c5dc271b3223a93eb37df7b',
+    //       repo: 'doc-blog', // GitHub 仓库
+    //       owner: 'Zhang318 ', // GitHub仓库所有者
+    //       admin: ['Zhang318 '], // 对仓库有写权限的人
+    //       // distractionFreeMode: true,
+    //       pagerDirection: 'last', // 'first'正序 | 'last'倒序
+    //       id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
+    //       title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
+    //       labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
+    //       body:
+    //         '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+    //     },
+    //   },
+    // ],
     [
       '@vuepress/last-updated', // "上次更新"时间格式
       {
