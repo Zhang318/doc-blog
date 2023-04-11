@@ -1,5 +1,6 @@
 <template>
   <div class="footer">
+
     <div class="icons" v-if="social && social.icons">
       <a
         :href="item.link"
@@ -9,6 +10,15 @@
         :key="index"
         target="_blank"
       ></a>
+    </div>
+    <div style="margin: 0px;padding-bottom: 10px">
+      <a href="https://beian.miit.gov.cn/" target="_blank" style="font-size: 15px" :underline="false">渝ICP备19017217号-2</a>
+      <div style="width:300px;margin:0 auto; padding:20px 0;">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50023502000471" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+          <img src="../img/gov.png" style="float:left;"/>
+          <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">渝公网安备 50023502000471号</p>
+        </a>
+      </div>
     </div>
 
     <!--Vdoing主题遵循MIT协议，完全开源且免费。如果您对主题的修改并不大，希望您保留主题的链接。-->
@@ -42,14 +52,14 @@ export default {
 <style lang='stylus'>
 // $mobileSidebarWidth = $sidebarWidth * 0.82
 .footer
-  padding 5rem 1.5rem 2.5rem
+  padding 2rem 1.5rem 2.5rem
   text-align center
   color #666
   box-sizing border-box
   font-size 0.85rem
   transition all 0.2s ease
   > span
-    line-height 1.5rem
+    line-height 1rem
   .icons
     margin-bottom 12px
     .iconfont

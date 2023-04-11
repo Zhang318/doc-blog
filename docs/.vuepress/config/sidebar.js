@@ -49,14 +49,7 @@ module.exports = {
     }
   ],
   '/04.其他/': [
-    {
-      title: '学习',
-      collapsable: false,
-      children: [
-        ['01.学习/01.学习网站','学习网站'],
-        ['01.学习/02.学习效率低，忘性很大怎么办？','学习效率低，忘性很大怎么办？'],
-      ]
-    },
+    
     {
       title: '学习笔记',
       collapsable: false,

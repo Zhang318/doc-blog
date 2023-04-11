@@ -15,8 +15,8 @@ const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   // @ts-ignore
-  theme: 'vdoing', // 使用npm主题包
-  // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
+  //theme: 'vdoing', // 使用npm主题包
+  theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
 
   locales: {
     '/': {
@@ -53,11 +53,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
       {
         text: '计算机基础',
-        link: '/base/',
+        link: '/basics/',
         items: [
           {
             text: '计算机基础',
-            link: '/base/'
+            link: '/basics/'
           },
           {
             text: '数据结构',
@@ -253,7 +253,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 页脚信息
     footer: {
-      createYear: 2022, // 博客创建年份
+      createYear: 2023, // 博客创建年份
       copyrightInfo:
         'Study Book | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
     },
@@ -272,12 +272,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
+    ['link', { rel: 'icon', href: '/img/logo.png' }], //favicons，资源放在public文件夹
     [
       'meta',
       {
         name: 'keywords',
-        content: '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
+        content: '后端博客,个人技术博客,后端,后端开发,后端框架,Java,Java面试题,技术文档,学习,面试,Git,SpringBoot,Spring,设计模式,计算机网络,操作系统,计算机,Nginx,Redis,Elasticsearch,MQ,RabbitMQ,RocketMQ,Kafka,中间件',
       },
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
