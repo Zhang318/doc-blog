@@ -12,7 +12,7 @@
       ></a>
     </div>
     <div style="margin: 0px;padding-bottom: 10px">
-      <a href="https://beian.miit.gov.cn/" target="_blank" style="font-size: 15px" :underline="false">渝ICP备19017217号-2</a>
+      <a href="https://beian.miit.gov.cn/" target="_blank" style="font-size: 15px" :underline="false">渝ICP备19017217号-3</a>
       <div style="width:300px;margin:0 auto; padding:20px 0;">
         <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=50023502000471" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
           <img src="../img/gov.png" style="float:left;"/>
